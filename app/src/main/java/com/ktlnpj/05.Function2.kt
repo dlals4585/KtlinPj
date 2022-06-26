@@ -24,6 +24,7 @@ fun multifly3(first:Int=1,second: Int=1,third: Int=1):Int{
     return first*second*third
 }
 
+////---------------------------------------------------------------------------
 //내부함수 (함수 안에 함수)
 fun showMyplus(first: Int,second: Int,third: Int):Int{
 
@@ -32,3 +33,4 @@ fun showMyplus(first: Int,second: Int,third: Int):Int{
     }
     return plus(first,second)
 }
+////---------------------------------------------------------------------------
