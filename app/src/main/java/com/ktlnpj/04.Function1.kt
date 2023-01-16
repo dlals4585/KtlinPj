@@ -27,6 +27,13 @@ fun main(array: Array<String>) {
     println(res4)//함수의 retrun값을 출력할 때는 함수를 반드시 변수에 넣어줘야한다.
 
     plusMany(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+
+
+    println("Hello world")
+    test(1,c = 6)
+    test2(id="id", nickname = "nickname", name = "name") //파라미터의 순서를 바꿀 수 있다.
+    println(test3(4,3))
 }
 
 //디폴트 값을 갖는 함수 만들기
@@ -50,3 +57,16 @@ fun plusMany(vararg numbers: Int) {
         print("$numbers ")
     }
 }
+
+//------------------------------------------------------------------------------------------------
+//kotlin은 디폴드 값을 주면 되기 때문에 오버로딩이 필요가 없다.
+fun test(a:Int,b:Int = 3, c:Int = 4):Int {
+    println(a+b)
+    return 0
+}
+
+fun test2(name:String,nickname:String,id:String) = println("$name $nickname $id")  //코드의 간결화
+
+fun test3(a:Int, b:Int) = a * b  //코드의 간결화 :: 리턴타입의 생략
+
+//------------------------------------------------------------------------------------------------

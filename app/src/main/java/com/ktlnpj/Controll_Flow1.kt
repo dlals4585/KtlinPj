@@ -2,6 +2,9 @@ package com.ktlnpj
 
 import java.lang.NullPointerException
 
+/**
+ * Null Safe
+ * **/
 fun main(array: Array<String>) {
     val a: Int ?= null
     val b: Int = 10

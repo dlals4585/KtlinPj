@@ -1,5 +1,8 @@
 package com.ktlnpj
 
+/**
+ * IF문
+ * **/
 fun main(array: Array<String>) {
     val a: Int = 5
     val b: Int = 10

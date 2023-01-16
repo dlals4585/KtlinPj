@@ -1,5 +1,8 @@
 package com.ktlnpj
 
+/**
+ * Class(클래스)
+ * **/
 //OOP - > Object Oriented Programming (객체지향 프로그래밍)
 
 //객체란? -> 이름이 있는 모든것
@@ -119,3 +122,19 @@ class TestClass(){
     fun test(a:Int){    }
     fun test(a:Int, b:Int){    }
 }
+
+
+//------------------------------------------------------------------------------------------------
+open class User constructor(open val name:String, open var age: Int = 20)//주생성자
+
+class Kid(override val name: String, override var age: Int) :User(name,age){  //User를 상속받는다
+    var gender :String = "female"
+    init{
+        println("1. 초기화중 (init)")
+    }
+    constructor(name:String, age:Int, gender:String ) : this(name, age){
+        this.gender = gender
+        println("2. 부생성자 호출")
+    }
+}
+//------------------------------------------------------------------------------------------------

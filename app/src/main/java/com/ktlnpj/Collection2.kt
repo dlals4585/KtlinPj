@@ -1,5 +1,8 @@
 package com.ktlnpj
 
+/**
+ * list 컬랙션의 확장함수
+ * **/
 fun main(array: Array<String>){
     var a = mutableListOf<Int>(1,2,3)
     a.add(4) //맨 뒤에 값이 추가

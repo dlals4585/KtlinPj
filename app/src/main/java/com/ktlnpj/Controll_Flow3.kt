@@ -1,6 +1,8 @@
 package com.ktlnpj
 
-
+/**
+ * when문 (자바의 스위치문)
+ * **/
 fun main(array: Array<String>) {
    var value:Int ?= null
     when(value){

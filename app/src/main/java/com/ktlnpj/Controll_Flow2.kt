@@ -1,6 +1,7 @@
 package com.ktlnpj
 
 import java.lang.NullPointerException
+import java.time.DayOfWeek
 
 //When
 fun main(array: Array<String>) {
@@ -41,4 +42,52 @@ fun main(array: Array<String>) {
     }
     println(value2)
 
+
+    isHoliday("금")
 }
+
+//------------------------------------------------------------------------------------------------
+fun isHoliday(dayOfWeek: String) {
+    when (dayOfWeek) {
+        "월" -> false
+        "화" -> false
+        "수" -> false
+        "목" -> false
+        "금" -> false
+        "토" -> true
+        "일" -> true
+    }
+
+    when (dayOfWeek) {
+        "월" ,
+        "화" ,
+        "수" ,
+        "목" ,
+        "금" -> false
+        "토" ,
+        "일" -> true
+    }
+
+    when (dayOfWeek) {
+        "토" ,
+        "일" -> true
+        else -> false
+    }
+
+    val result =
+        when (dayOfWeek) {
+            "토" ,
+            "일" -> true
+            else -> false
+        }
+    //익스프레션(조건문을 변수로 지정)인 경우는 return 값이 필수로 존재해야 하기 때문에 else처리를 해야한다
+
+    val result1 =
+        when (val day = dayOfWeek) {
+            "토" ,
+            "일" -> if(day == "토") "좋아" else "아주좋아"
+            else -> false
+        }
+    println(result)
+}
+//------------------------------------------------------------------------------------------------
