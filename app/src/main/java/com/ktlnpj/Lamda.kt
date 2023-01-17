@@ -1,12 +1,38 @@
 package com.ktlnpj
 
-fun main(){
+import android.app.Activity
+import android.view.View
 
+fun main(){
+    lateinit var activity:Activity
     /**
      * 람다 :: 익명 함수이다.(함수에 이름이 없다)
      * 함수가 변수처럼 사용될 수 있다. + argument , return값이 함수가 될 수 있다.
      * 한번 사용되고 재사용되지 않는 함수 >>
      *  **/
+
+    /**
+     * 람다의 대표적인 예 : 온클릭리스너
+     * SAM(Single Abstract Method) : 단일 추상 메서드
+     * >> 자바 함수형 인터페이스 관계에서 파생됨
+     * >> 인터페이스 객체를 람다로 넘길 수 있다.
+     * **/
+
+
+    val view = View(activity.applicationContext)
+
+    //옛날 자바를 이용한 코당
+    /*view.setOnClickListener(
+        new View.OnClickListener (){
+            @Override
+            public void onClick(View:view) {
+            }
+        })*/
+
+    view.setOnClickListener({
+        println("람다 예제")
+    })
+
     val a = fun() { println("hello") }
 
     //ex)
@@ -49,3 +75,5 @@ class Test1(){
     fun hello() = println("안녕")
     fun bye() = println("잘가")
 }
+
+
