@@ -41,4 +41,4 @@ class Monster(private var hp: Int, private var power: Int) {
         }
     }
 }
-class Monster2(private val hp: Int, private val power: Int) { } // 클래스를 만들 때 무조건 프라이빗 + val로 만든 뒤에 나중에 바꿔주는 방법이 좋다.
+class Monster2(private val hp: Int, private val power: Int) // 클래스를 만들 때 무조건 프라이빗 + val로 만든 뒤에 나중에 바꿔주는 방법이 좋다.

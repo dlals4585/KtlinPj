@@ -49,7 +49,5 @@ open class Person() {
     fun sleep() {
     }
 }
-class Student() : Person() {
-}
-class Teacher() : Person() {
-}
+class Student() : Person()
+class Teacher() : Person()
