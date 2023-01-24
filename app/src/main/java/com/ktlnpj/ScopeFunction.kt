@@ -24,68 +24,66 @@ package com.ktlnpj
  *     >> with :: 객체 초기화, 람다 리턴 값이 필요 없을 때
  * **/
 
-//let, run, apply, also, with
-fun main(){
-
-    //1. let
-    //수신객체.let{ it ->
+// let, run, apply, also, with
+fun main() {
+    // 1. let
+    // 수신객체.let{ it ->
     // 마지막줄 : retuen
     // }
     val a = 3
-    a.let {  }
-    val user : User1? = User1("채상아", 10, true)
+    a.let { }
+    val user: User1? = User1("채상아", 10, true)
 
     val age1 = user?.let {
         it.age
     }
     println(age1)
 
-    //2. run
+    // 2. run
     // 수신객체.run { this ->
     // 마지막 줄 : return
-    //}
-    val kid = User1("아이",4,false)
+    // }
+    val kid = User1("아이", 4, false)
     val kidAge = kid.run {
-        age //전역변수가 설정되어있으면 전역변수로 나온다.
+        age // 전역변수가 설정되어있으면 전역변수로 나온다.
     }
     println(kidAge)
 
-    //3. apply
+    // 3. apply
     // 수신객체.apply { this ->
     // asdfasdf 초기화에 사용
-    //}
+    // }
     // >>> return 깂은 수신객체 자신임. > 객체의 항목을 추가로 지정해주어야함.
-    val female = User1("슬기",20,true,true)
+    val female = User1("슬기", 20, true, true)
     val kidName = female.apply {
         hasGlasses = false
     }
     println(kidName.hasGlasses)
 
-    //4. also
+    // 4. also
     // 수신객체.apply { it ->
     // 로그를 찍을 때 권장...
-    //}
+    // }
     // >>> return 깂은 수신객체 자신임. > 객체의 항목을 추가로 지정해주어야함.
-    val male = User1("민수",17,false,true)
+    val male = User1("민수", 17, false, true)
     val maleName = male.also {
         println(it.name)
     }
 
-    //5. with
+    // 5. with
     // with(수신객체) {
     // return : 마지막 줄
-    //}
-    val result = with (male){
+    // }
+    val result = with(male) {
         hasGlasses = false
         true
     }
     println(result)
-
 }
 
 class User1(
-    val name : String,
-    val age : Int,
-    val gender : Boolean, //true : female, false : male
-    var hasGlasses : Boolean = true
+    val name: String,
+    val age: Int,
+    val gender: Boolean, // true : female, false : male
+    var hasGlasses: Boolean = true
 )

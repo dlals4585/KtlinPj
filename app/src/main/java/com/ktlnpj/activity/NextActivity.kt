@@ -1,9 +1,9 @@
 package com.ktlnpj.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.ktlnpj.R
 
 class NextActivity : AppCompatActivity() {
@@ -14,7 +14,6 @@ class NextActivity : AppCompatActivity() {
         Toast.makeText(this, "라이프사이클 - Next : onCreate", Toast.LENGTH_SHORT).show()
         Log.d("라이프사이클 - Next", "onCreate")
     }
-
 
     override fun onStart() {
         super.onStart()
@@ -51,5 +50,4 @@ class NextActivity : AppCompatActivity() {
         Toast.makeText(this, "라이프사이클 - Next : onDestroy", Toast.LENGTH_SHORT).show()
         Log.d("라이프사이클 - Next", "onDestroy")
     }
-
 }

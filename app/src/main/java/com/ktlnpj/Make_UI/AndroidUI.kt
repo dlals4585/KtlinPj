@@ -1,11 +1,10 @@
 package com.ktlnpj.Make_UI
 
-//안드로이드에서 화면을 그리는 방법
+// 안드로이드에서 화면을 그리는 방법
 // - XML을 사용한다,
 // - XML = DSL Language ==> Domain Specific Language
 // => 도메인: 범주 // 어떠한 범주에 특화되어있는 언어
 // - 안드로이드 UI를 그리기 위해 특화된 언어
-
 
 // 핸드폰마다 화면 크기가 다 다른데 어떻게 화면을 그려야 할까?
 // - 픽셀, dpi, dp 단위

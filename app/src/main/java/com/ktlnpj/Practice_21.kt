@@ -1,14 +1,13 @@
 package com.ktlnpj
 
-
-//3. TV 클래스
+// 3. TV 클래스
 //  (1) ON/OFF 기능
 //  (2) 채널 돌리는 기능
 //  (3) 초기 채널은 (S사, M사, K사 3개)
 
-fun main(array:Array<String>){
-    //val channels = listOf<String>("K","M","S");
-    val tv :TV = TV(listOf<String>("K","M","S"))
+fun main(array: Array<String>) {
+    // val channels = listOf<String>("K","M","S");
+    val tv: TV = TV(listOf<String>("K", "M", "S"))
     /*tv.switch()
     println(tv.onOff)*/
     println(tv.checkCurrentchnel())
@@ -31,35 +30,36 @@ fun main(array:Array<String>){
     println(tv.checkCurrentchnel())
     tv.chandown()
     println(tv.checkCurrentchnel())
-
 }
-class TV(val channels:List<String>){
+class TV(val channels: List<String>) {
 
-    var onOff:Boolean = false //on==true/ off==false.
-    //------------------------------------------------------------------------------------ start 중요
+    var onOff: Boolean = false // on==true/ off==false.
+
+    // ------------------------------------------------------------------------------------ start 중요
     var currentChnelno = 0
-        set(value){
+        set(value) {
             field = value
-            if (field > 2){
+            if (field > 2) {
                 field = 0
             }
-            if (field < 0){
+            if (field < 0) {
                 field = 2
             }
         }
-        get(){
+        get() {
             println("호출되었습니다.")
             return field + 1
         }
-    //------------------------------------------------------------------------------------ end 중요
-        fun switch(){
-            onOff = !onOff
-        }
-        fun checkCurrentchnel():String{
-            return channels[currentChnelno]
+
+    // ------------------------------------------------------------------------------------ end 중요
+    fun switch() {
+        onOff = !onOff
+    }
+    fun checkCurrentchnel(): String {
+        return channels[currentChnelno]
     }
 
-    fun chanup(){
+    fun chanup() {
         /*if (currentChnelno==2){
             currentChnelno = 0
             return
@@ -77,7 +77,7 @@ class TV(val channels:List<String>){
             }
         }*/
     }
-    fun chandown(){
+    fun chandown() {
         /*if (currentChnelno==0){
             currentChnelno = 2
             return

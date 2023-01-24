@@ -16,47 +16,47 @@ package com.ktlnpj
  *   >> when과 함께 쓰일 때, 장점을 가진다.
  * **/
 
-fun main(){
-
-    val person = Person1("수지",24)
+fun main() {
+    val person = Person1("수지", 24)
     println(person.toString())
 
-////데이터클래스 예제------------------------------------------------------
-    val dog = Dog1("해피",21)
+// //데이터클래스 예제------------------------------------------------------
+    val dog = Dog1("해피", 21)
     println(dog.toString())
     println(dog.copy(age = 3))
 
-////세일즈 클래스 예제------------------------------------------------------
-    val cat : Cat1 = BlueCat()
-    val res = when (cat){
-        is BlueCat ->{"Blue"}
-        is RedCat ->{"Red"}
-        is GreenCat ->{"Green"}
-        is WhiteCat ->"white"
+// //세일즈 클래스 예제------------------------------------------------------
+    val cat: Cat1 = BlueCat()
+    val res = when (cat) {
+        is BlueCat -> { "Blue" }
+        is RedCat -> { "Red" }
+        is GreenCat -> { "Green" }
+        is WhiteCat -> "white"
     }
     println(res)
-
 }
-//default class
+
+// default class
 class Person1(
-    val name:String,
-    val age : Int
+    val name: String,
+    val age: Int
 )
 
-//Data class
+// Data class
 data class Dog1(
-    val name : String,
-    val age : Int
-){
+    val name: String,
+    val age: Int
+) {
     /*override fun toString(): String {
         return "직접 구현 $name"
     }*/
 }
 
-//Sealed class
+// Sealed class
 sealed class Cat1
-//cat1 클래스가 sealed class가 되면 Cat1이 어떤 자식들을 가지고 있는지 알게된다. >> else를 사용하지 않는다
-//ex 에러 타입을 체크할 때, recycler View > 뷰타입을 체킹하는데에 사용하면 좋다
+
+// cat1 클래스가 sealed class가 되면 Cat1이 어떤 자식들을 가지고 있는지 알게된다. >> else를 사용하지 않는다
+// ex 에러 타입을 체크할 때, recycler View > 뷰타입을 체킹하는데에 사용하면 좋다
 class BlueCat : Cat1()
 class RedCat : Cat1()
 class GreenCat : Cat1()
